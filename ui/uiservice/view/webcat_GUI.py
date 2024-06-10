@@ -170,7 +170,7 @@ class WebCatGUI:
         with solara.Card('Add new websites', margin=0, elevation=0):
             with solara.VBox():
                 with solara.Card('From file'):
-                    solara.FileDrop(label='Drop a .csv file here', on_file=load_from_file)
+                    solara.FileDrop(label='Drop a .txt or .csv file here', on_file=load_from_file)
                     solara.ProgressLinear(load_from_file.pending)
                     if load_from_file.finished:
                         self.set_data(load_from_file.value)
