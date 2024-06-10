@@ -7,3 +7,6 @@ Launch Docker compose from the same folder containing the ```compose.yaml``` fil
 ```
 docker compose up
 ```
+
+## Docs
+Please refer to the [wiki](https://github.com/Samuele95/WebCat/wiki) for the overall docs and usage instructions.
