@@ -1,0 +1,38 @@
+services:
+  webcrawler:
+    build: ./crawler
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: "exit 0"
+    environment:
+      - PYTHONUNBUFFERED=1
+  scraper:
+    build: ./scraper
+    ports:
+      - "5000:5000"
+    healthcheck:
+      test: "exit 0"
+    environment:
+      - PYTHONUNBUFFERED=1
+  clusterer:
+    build: ./som
+    ports:
+      - "6000:6000"
+    healthcheck:
+      test: "exit 0"
+    environment:
+      - PYTHONUNBUFFERED=1
+  ui:
+    build: ./ui
+    depends_on:
+      webcrawler:
+        condition: service_healthy
+      scraper:
+        condition: service_healthy
+      clusterer:
+        condition: service_healthy
+    ports:
+      - "8765:8765"
+    environment:
+      - PYTHONUNBUFFERED=1

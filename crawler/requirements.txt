@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+Django==5.0.6
+djangorestframework==3.15.1
+drf_spectacular==0.27.2
+Requests==2.32.3

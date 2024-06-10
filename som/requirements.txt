@@ -1,0 +1,6 @@
+Flask==3.0.3
+flask_restx==1.3.0
+matplotlib==3.9.0
+numpy==1.26.4
+scikit_learn==1.5.0
+sklearn_som==1.1.0
